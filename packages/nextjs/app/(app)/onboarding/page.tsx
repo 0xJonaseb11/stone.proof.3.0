@@ -1,3 +1,4 @@
+// "use client";
 import { Metadata } from "next";
 import { ClaimRoleCard } from "~~/components/dashboard/ClaimRoleCard";
 

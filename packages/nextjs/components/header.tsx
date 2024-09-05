@@ -19,7 +19,7 @@ export const Header: React.FC = () => {
     if (!inView) {
       window.scroll({ behavior: "smooth", top: 0 });
     }
-  }, []);
+  }, [inView]);
 
   const toggleMenu = () => {
     setIsMenuOpen(prev => !prev);

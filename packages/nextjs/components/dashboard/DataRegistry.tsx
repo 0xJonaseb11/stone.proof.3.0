@@ -1,9 +1,8 @@
 "use client";
-/* eslint-disable prettier/prettier */
 
-import { useState, useEffect } from "react";
-import { ethers } from "ethers";
+import { useEffect, useState } from "react";
 import DataRegistryABI from "../../contracts/DataRegistry.json";
+import { ethers } from "ethers";
 
 type DataRecord = {
   id: string;
@@ -14,20 +13,23 @@ type DataRecord = {
 export const DataRegistry: React.FC = () => {
   const [records, setRecords] = useState<DataRecord[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isClient, setIsClient] = useState<boolean>(false);
+
+  // Set isClient to true after mounting in client
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const fetchDataRecords = async () => {
+    if (typeof window === "undefined" || !window.ethereum) {
+      return alert("Please install MetaMask or another EVM-compatible wallet.");
+    }
+
     setIsLoading(true);
     try {
-      // Check if `window` is defined and `ethereum` is available to avoid server-side errors
-      if (typeof window !== "undefined" && !window.ethereum) {
-        alert("Please install MetaMask or any other EVM-wallet");
-        return;
-      }
-
-      // If `window` is defined, proceed with accessing `window.ethereum`
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const signer = provider.getSigner();
-      const contractAddress = "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0"; 
+      const contractAddress = "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0";
       const contract = new ethers.Contract(contractAddress, DataRegistryABI.abi, signer);
 
       const recordsData = await contract.getAllRecords();
@@ -46,24 +48,20 @@ export const DataRegistry: React.FC = () => {
     }
   };
 
+  // Trigger data fetch only on client
   useEffect(() => {
-    // Ensure fetchDataRecords runs only on the client side
-    if (typeof window !== "undefined") {
-      fetchDataRecords();
-    }
-  }, []);
+    if (isClient) fetchDataRecords();
+  }, [isClient]);
 
   return (
     <div className="flex flex-col max-w-72 gap-4 bg-neutral-100 px-12 py-16 rounded-xl shadow mr-10">
       <p className="text-2xl text-center text-neutral-800">Data Records</p>
-      <p className="text-center text-xl text-neutral-500">
-        View and manage data entries on the StoneProof platform.
-      </p>
+      <p className="text-center text-xl text-neutral-500">View and manage data entries on the StoneProof platform.</p>
       {isLoading ? (
         <p className="text-center text-neutral-500">Loading records...</p>
       ) : (
         <ul className="bg-white rounded-lg p-4">
-          {records.map((record) => (
+          {records.map(record => (
             <li key={record.id} className="py-2 border-b border-neutral-200">
               <p className="font-bold">{record.description}</p>
               <p className="text-sm text-neutral-500">Owned by: {record.owner}</p>
