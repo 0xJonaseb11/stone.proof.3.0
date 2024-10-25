@@ -92,7 +92,21 @@ contract Partcipants {
     }
 
     // update role
-    
+    function updateRole(address _participantAddress, string memory _newRole) public onlyRole(DEFAULT_ADMIN_ROLE) {
+        require(participants[_participantAddress].participantAddress != address(0), "Participant is Not Registered");
+
+        // remove old role
+        bytes32 oldRoleHash = keccak256(abi.encodePacked(participants[_participantAddress].role));
+        _revokeRole(oldRoleHash, _participantAddress);
+
+        // assign new role
+        bytes32 newRoleHash = keccak256(abi.encodePacked(_newRole));
+        _setupRole(newRoleHash, _participantAddress);
+        participants[_participantAddress].role = _newRole;
+        
+        // log event to blockchain after updating role
+        emit ParticipantRoleUpdated(_participantAddress, _newRole);
+    }
 
     // getters
 }
