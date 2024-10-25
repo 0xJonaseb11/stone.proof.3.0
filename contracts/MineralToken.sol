@@ -12,7 +12,7 @@ pragma solidity ^0.8.20;
 // imports
 import { ERC721 } from "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import { AccessControl } from "@openzeppelin/contracts/access/AccessControl.sol";
-import { Counters } from "@openzeppelin/contracts/utils/Counters.sol";
+import "@openzeppelin/contracts/utils/Counters.sol";
 
 
 
@@ -86,11 +86,23 @@ contract MineralToken  is ERC721, AccessControl {
         verifiedBatches[_tokenId] = true;
 
         // log event to blockchain after verification of mineral batch
+        emit MineralVerified(_tokenId, true);
 
     }
 
 
     // getters - executes
     // retrieve batch details
-    function getBatchDetails
+    function getBatchDetails(uint256 _tokenId) public view returns(MineralBatch memory) {
+        require(_exists(_tokenId), "Batch Doesn't Exist!!");
+        return mineralBatches[_tokenId];
+    }
+
+    // transfer mineral
+    function transferMineral(address to, uint256 _tokenId) public onlyRole(TRANSFER_ROLE) {
+        require(_exists(_tokenId), "Batch Doesn't Exist!!");
+        require(verifiedBatches[_tokenId], "Batch Isn't Verified!!"); // only allow transfer of verified mineral batches
+
+        _transfer(msg.sender, to, _tokenId);
+    }
 }

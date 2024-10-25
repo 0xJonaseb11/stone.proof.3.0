@@ -21,7 +21,7 @@ contract DataRegistry is AccessControl{
 
     // roles for access control
     bytes32 public constant AUDITOR_ROLE = keccak256("AUDITOR_ROLE");
-    bytes32 public constant SUPPLY_CHAIN_ROLE = keccak256("SUPPLY_CHAIN_ROLE";
+    bytes32 public constant SUPPLY_CHAIN_ROLE = keccak256("SUPPLY_CHAIN_ROLE");
     
     // structre to store each event log
     struct EventLog {
@@ -38,7 +38,7 @@ contract DataRegistry is AccessControl{
     // contract constructor
     constructor() {
         // set up roles
-        _setUpRole(DEFAULT_ADMIN_ROLE, msg.sender);
+        _setupRole(DEFAULT_ADMIN_ROLE, msg.sender);
     }
 
     // errors - customly
@@ -59,7 +59,7 @@ contract DataRegistry is AccessControl{
             timestamp: block.timestamp
         });
         // map the event to the batch ID
-        batchEvents[_batchId].push(eventCounter);
+        batchEventIds[_batchId].push(eventCounter);
         // Log event to the blockchain after recording
         emit EventRecorded(eventCounter, _batchId, _eventType, _details);
     }
