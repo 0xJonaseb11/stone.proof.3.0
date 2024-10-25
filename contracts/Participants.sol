@@ -57,7 +57,28 @@ contract Partcipants {
         require(participants[_participantAddress].participantAddress == address(0), "Participant Already Registered!!");
 
         // Assign role based on _role input
-        bytes32 roleHash = 
+        bytes32 roleHash = keccak256(abi.encodePacked(_role));
+        // validate role by hash
+        require(
+            roleHash == MINER_ROLE || roleHash == REFINER_ROLE || roleHash == TRANSPORTER_ROLE || roleHash == AUDITOR_ROLE || roleHash == INSPECTOR_ROLE ,
+            "INVALID ROLE"
+        ); 
+
+        // Register the participant and grant role
+        participants[_participantAddress] = Participant({
+            participantAddress: _participantAddress,
+            name: _name,
+            location: _location,
+            role: _role,
+            isActive: true,
+            dateRegistered: block.timestamp
+        });
+        // add the registered participant to the list
+        participantList.push(_participantAddress);
+
+        // setup role to recently added participant
+        _setupRole(roleHash, _participantAddress);
+        emit ParticipantRegistered(_participantAddressm, _role, _name);
     }
 
     // getters
