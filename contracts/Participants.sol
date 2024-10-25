@@ -81,5 +81,18 @@ contract Partcipants {
         emit ParticipantRegistered(_participantAddressm, _role, _name);
     }
 
+    // Update participant status
+    function updateParticipantStatus(address _participantAddress, bool _isActive) public onlyRole(DEFAULT_ADMIN_ROLE) {
+        require(participants[_participantAddress].participantAddress != address(0), "Participant you're trying to update is not Registered!!");
+
+        // set status after condition is met
+        participants[_participantAddress].isActive = _isActive;
+        // log event to blockchain for successful status update
+        emit ParticipantStatusUpdated(_participantAddress, _isActive);
+    }
+
+    // update role
+    
+
     // getters
 }
