@@ -5,6 +5,7 @@ pragma solidity ^0.8.20;
 * SupplyChain contract
 * @author @0xJonaseb11 
 * @notice Manages the flow of minerals in the supply chain
+* @notice Remember to do some auditing to resolve any vulnerability to external calls with nonReentrant
 * @param Tracks status(mined, processed, transported, etc) using events
 * @param Links to Participants.sol for updating and verifying actions performed by different chain actors!
 **/
