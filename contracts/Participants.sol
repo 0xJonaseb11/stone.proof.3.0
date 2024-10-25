@@ -108,5 +108,36 @@ contract Partcipants {
         emit ParticipantRoleUpdated(_participantAddress, _newRole);
     }
 
-    // getters
+
+    // getters - execute
+    
+    // handle getting participants by Role
+    function getParticipantsByRole(string memory _role) public view returns (Participant[] memory) {
+        bytes32 roleHash = keccak256(abi.encodePacked(_role));
+        uint256 count;
+
+        // count participants with the specified role
+        for (uint256 i = 0; i < participantList.length; i++) {
+            if (hasRole(roleHash, participantList[i])) {
+                count++;
+            }
+        }
+
+        // collect participants with the specified role
+        Participant[] memory roleParticipants = new Participant[](count);
+        uint256 index = 0;
+
+        // loop through roles to retrieve participants
+        for (uint256 i = 0; i < participantList.length; i++) {
+            if (hasRole(roleHash, participantList[i])) {
+                roleParticipants[index] = participants[participantList[i]];
+                index++;
+            }
+
+        }
+        return roleParticipants;
+    }
+
+
+
 }
