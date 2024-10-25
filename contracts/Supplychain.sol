@@ -50,7 +50,51 @@ contract SupplyChain is AccessControl {
 
     // business logic
 
-    // setters
+    // setters - cores
+    function createBatch(string memory _location) public onlyRole(MINER_ROLE) {
+        // assign unique counter
+        batchCounter++;
+        mineralBatches[batchCounter] = MineralBatch({
+            id: batchCounter,
+            owner: msg.sender,
+            location: _location,
+            status: "Mined",
+            timestamp: block.timestamp
+        });
+        // emit event to show batch has been created
+        emit BatchCreated(batchCounter, msg.sender, _location);
+    }
 
-    // getters
+    // update mining status
+    function updateStatus(uint256 _batchId, string memory _newStatus) public {
+        require(hasRole(REFINER_ROLE, msg.sender) || hasRole(TRANSPORTER_ROLE, msg.sender), "Not Authorized To Update Status");
+        require(mineralBatches[_batchId].id != 0, "Batch Doesn't Exist!!");
+
+        // allow business logic to flow normal after conditions are passed
+         /**
+        * @notice Block.timestamp will have to be accessed for vulnerabilities 
+        * @param before the contract is deployed to a live network 
+        **/
+        mineralBatches[_batchId].status = _newStatus;
+        mineralBatches[_batchId].timestamp = block.timestamp;
+
+        // // Log event to blockchain after updating status
+        emit StatusUpdated(_batchId, _newStatus);
+    }
+
+    // handle transferring ownership
+    function transferOwnership(uint256 _batchId, address _newOwner) public {
+        require(mineralBatches[_batchId].owner == msg.sender, "Not Allowed To Transfer Ownership Since You are Not The Owner");
+
+        // business logic flow normal after condition passes
+        mineralBatches[_batchId].owner = _newOwner;
+        emit OwnershipTransferred(_batchId, _newOwner);
+    }
+
+    // getters - executes
+    // handle the retrieving of batches
+    function getBatch(uint256 _batchId) public view returns (MineralBatch memory) {
+        require(mineralBatches[_batchId].id != 0, "Batch Doesn't Exist!!");
+        return mineralBatches(_batchId);
+    }
 }
