@@ -34,8 +34,8 @@ export const Header: React.FC = () => {
           ref={ref}
           src={`/logo_dark.svg`}
           alt="Stoneproof"
-          width={150}
-          height={38}
+          width={160}
+          height={52}
         />
       </Link>
       <div className="flex flex-1 justify-center max-w-[600px]">

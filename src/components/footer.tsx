@@ -1,4 +1,7 @@
 import Image from "next/image";
+import { XBrandIcon } from "./x-icon";
+import { Github } from "lucide-react";
+import { Input } from "./ui/input";
 
 export const Footer: React.FC = () => {
   return (
@@ -17,6 +20,10 @@ export const Footer: React.FC = () => {
           self-executing smart contracts that are deployed on various
           permissionless public blockchains.
         </p>
+
+        <div>
+          <XBrandIcon className="h-4 hover:text-black" />
+        </div>
       </div>
       <div className="flex flex-col items-end space-y-2">
         <h3 className="text-xl text-neutral-800">
@@ -25,6 +32,9 @@ export const Footer: React.FC = () => {
         <p className="text-sm text-neutral-600">
           Subscribe to the newsletter for updates
         </p>
+        <div>
+          <Input />
+        </div>
       </div>
     </footer>
   );
