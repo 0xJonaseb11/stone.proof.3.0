@@ -73,6 +73,17 @@ contract DataRegistry is AccessControl{
         for (uint256 i = 0; i < eventIds.length; i++) {
             batchEvents[i] = events[eventIds[i]];
         }
-        return bat
+        return batchEvents;
+    }
+
+    // get event details
+    function getEventDetails(uint256 _eventId) public view returns(EventLog memory) {
+        require(events[_eventId].timestamp != 0, "Event Doesn't Exist!!");
+        return events[_eventId];
+    }
+
+    // Audit batches
+    function auditBatch(uint256 _batchId) public view onlyRole(AUDITOR_ROLE) returns(EventLog[] memory) {
+        return getBatchEvents(_batchId);
     }
 }
