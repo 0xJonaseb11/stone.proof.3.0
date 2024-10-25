@@ -1,12 +1,16 @@
-import { Footer } from "../landing/footer";
-import { Header } from "../landing/header";
+import { Footer } from "../footer";
+import { Header } from "../header";
+import { HeroSection } from "../marketing/hero-section";
 
 export const MarketingLayout: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
   return (
     <>
-      <Header />
+      <div className="bg-[url('/static/background_big_animated.svg')] bg-cover h-auto">
+        <Header />
+        <HeroSection />
+      </div>
       {children}
       <Footer />
     </>
