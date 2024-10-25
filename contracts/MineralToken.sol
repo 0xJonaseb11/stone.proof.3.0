@@ -77,5 +77,20 @@ contract MineralToken  is ERC721, AccessControl {
         return newBatchId;
     }
 
-    // getters
+    // verification of mineral batch
+    function verifyBatch(uint256 _tokenId) public onlyRole(DEFUALT_ADMIN_ROLE) {
+        require(_exists(_tokenId), "Batch Doesn't exist");
+
+        MineralBatch storage batch = mineralBatches[_tokenId];
+        batch.isCertified = true;
+        verifiedBatches[_tokenId] = true;
+
+        // log event to blockchain after verification of mineral batch
+
+    }
+
+
+    // getters - executes
+    // retrieve batch details
+    function getBatchDetails
 }
