@@ -22,16 +22,18 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
   }, [replace, connectedAddress]);
 
   return (
-    <main className="w-full max-w-4xl mx-auto">
+    <main className="w-full max-w-4xl mx-auto sm:px-0 px-3">
       <div className="py-5 flex justify-between">
-        <Link href={`/`} className="sm:block hidden">
+        <Link href={`/dashboard`} className="sm:block hidden">
           <Image src={`/logo_dark.svg`} alt="Stoneproof" width={160} height={52} />
         </Link>
-        <Link href={`/`} className="sm:hidden block">
+        <Link href={`/dashboard`} className="sm:hidden block">
           <Image src={`/logo_small.svg`} alt="Stoneproof" width={50} height={40} />
         </Link>
         <div>
-          <BlockieAvatar address={connectedAddress || ""} size={36} ensImage={result.data} />
+          <Link href={`/account`}>
+            <BlockieAvatar address={connectedAddress || ""} size={36} ensImage={result.data} />
+          </Link>
         </div>
       </div>
       {children}
