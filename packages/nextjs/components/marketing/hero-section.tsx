@@ -1,8 +1,13 @@
+"use client";
+
 import Link from "next/link";
 import { RainbowKitCustomConnectButton } from "../scaffold-eth";
 import { ArrowRight, Lock } from "lucide-react";
+import { useAccount } from "wagmi";
 
 export const HeroSection: React.FC = () => {
+  const { address: connectedAddress } = useAccount();
+
   return (
     <div className="flex flex-col gap-4 pt-16 pb-5 justify-center w-full items-center">
       <Link
@@ -23,7 +28,9 @@ export const HeroSection: React.FC = () => {
         </p>
       </div>
       <div>
-        <RainbowKitCustomConnectButton className="group bg-sky-600 hover:bg-sky-500 px-6 py-3 text-white rounded-full flex gap-4 items-center" />
+        {!connectedAddress && (
+          <RainbowKitCustomConnectButton className="group bg-sky-600 hover:bg-sky-500 px-6 py-3 text-white rounded-full flex gap-4 items-center" />
+        )}
       </div>
       <div className="sm:flex hidden items-center justify-between text-center h-52 w-full backdrop-blur-md bg-white/40 border border-white max-w-4xl p-8 rounded-xl shadow-lg">
         <div>
