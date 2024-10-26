@@ -12,7 +12,7 @@ pragma solidity ^0.8.20;
 // imports
 import { AccessControl } from "@openzeppelin/contracts/access/AccessControl.sol";
 
-contract Partcipants is AccessControl{
+contract Participants is AccessControl{
     // states
     mapping(address => Participant) public participants;
     address[] public participantList;

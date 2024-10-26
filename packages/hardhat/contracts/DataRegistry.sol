@@ -12,7 +12,7 @@ pragma solidity ^0.8.20;
 // imports
 import { AccessControl } from "@openzeppelin/contracts/access/AccessControl.sol";
 
-contract DataRegistry is AccessControl{
+contract Registry is AccessControl{
     // states for tracking events
     uint256 public eventCounter;
     mapping(uint256 => EventLog) public events;

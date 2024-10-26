@@ -1,4 +1,6 @@
+/* eslint-disable prettier/prettier */
 "use strict";
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const hre = require("hardhat");
 
 const main = async() => {

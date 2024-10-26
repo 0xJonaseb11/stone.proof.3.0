@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 /* eslint-disable @typescript-eslint/no-var-requires */
 // hardhat.config.cjs
 // require("@nomicfoundation/hardhat-toolbox");
@@ -36,6 +37,9 @@ module.exports = {
     optimizer: {
       enabled: true,
       runs: 200,
-    }
-  }
+    },
+  },
+  namedAccounts: {
+    deployer: 0, // Account index or name in hardhat.config
+},
 };
