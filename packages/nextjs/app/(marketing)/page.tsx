@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import { AnimatedCircles, HealthSvg, LayeredCircles, SwapSvgIcon } from "~~/components/svgs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "~~/components/ui/accordion";
@@ -10,12 +8,12 @@ export default function Page() {
       {/* Intro Section */}
       <section className="flex flex-col gap-4 mb-16">
         <div className="flex flex-col justify-center gap-6 items-center px-3 py-10">
-          <h1 className="text-3xl sm:text-4xl font-medium">Meet Stoneproof</h1>
-          <p className="text-xl">Supply chain management for minerals.</p>
+          <h1 className="text-3xl sm:text-4xl font-medium text-neutral-800">Meet Stoneproof</h1>
+          <p className="text-xl text-center text-neutral-600">Supply chain management for minerals.</p>
         </div>
-        <div className="grid grid-rows-1 w-full gap-12">
+        <div className="grid grid-rows-1 w-full gap-16">
           <div className="grid sm:grid-cols-2 grid-cols-1 gap-10 sm:px-0 px-3">
-            <div className="relative w-full h-64">
+            <div className="relative w-full h-[300px]">
               <Image
                 src={`/static/minerals.jpg`}
                 alt="Minerals in vehicle"
@@ -35,7 +33,7 @@ export default function Page() {
               <h2 className="text-3xl font-medium text-neutral-800 mt-6">Shortfall Secured</h2>
               <p className="text-neutral-600">The Stoneproof secured with a backstop against protocol insolvency.</p>
             </div>
-            <div className="relative w-full h-64">
+            <div className="relative w-full h-[300px]">
               <Image
                 src={`/static/people-in-mine.jpeg`}
                 alt="People in mining site"
