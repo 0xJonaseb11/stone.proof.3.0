@@ -96,6 +96,6 @@ contract SupplyChain is AccessControl {
     // handle the retrieving of batches
     function getBatch(uint256 _batchId) public view returns (MineralBatch memory) {
         require(mineralBatches[_batchId].id != 0, "Batch Doesn't Exist!!");
-        return mineralBatches(_batchId);
+        return mineralBatches[_batchId];
     }
 }
