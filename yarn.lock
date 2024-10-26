@@ -3405,9 +3405,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-<<<<<<< HEAD
-"@types/react@npm:18.3.12, @types/react@npm:~18.3.5":
-=======
 "@types/react-dom@npm:^18.3.1":
   version: 18.3.1
   resolution: "@types/react-dom@npm:18.3.1"
@@ -3417,8 +3414,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:~18.3.5":
->>>>>>> dd2f7078761b8e0603ae88c50002196e90abd05d
+"@types/react@npm:*, @types/react@npm:18.3.12, @types/react@npm:~18.3.5":
   version: 18.3.12
   resolution: "@types/react@npm:18.3.12"
   dependencies:
