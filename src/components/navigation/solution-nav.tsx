@@ -5,7 +5,7 @@ import {
 
 export const SolutionsNav: React.FC = () => {
   return (
-    <NavigationMenuContent className="flex gap-4 p-6 max-w-[400px] bg-white">
+    <NavigationMenuContent className="flex gap-4 p-6 w-auto bg-white">
       <div className="w-[400px]">
         <div>
           <p>Traceability</p>

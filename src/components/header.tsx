@@ -28,7 +28,7 @@ export const Header: React.FC = () => {
   }, []);
 
   return (
-    <header className="flex w-full h-full px-4 justify-around py-8 items-center">
+    <header className="flex w-auto h-full px-4 justify-around py-8 items-center">
       <Link href={`/`}>
         <Image
           ref={ref}
@@ -38,29 +38,10 @@ export const Header: React.FC = () => {
           height={52}
         />
       </Link>
-      <div className="flex flex-1 justify-center max-w-[600px]">
-        <NavigationMenu>
-          <NavigationMenuList>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger>Solutions</NavigationMenuTrigger>
-              <SolutionsNav />
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger>Protocols</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <NavigationMenuLink>
-                  Protocols navigation menu
-                </NavigationMenuLink>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger>Token</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <NavigationMenuLink>token things</NavigationMenuLink>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-          </NavigationMenuList>
-        </NavigationMenu>
+      <div className="flex flex-1 gap-4 justify-center">
+        <Link href={`/#solutions`}>Solutions</Link>
+        <Link href={`/#protocols`}>Protocols</Link>
+        <Link href={`/#token`}>Token</Link>
       </div>
       <div>
         <button className="group bg-white px-6 py-2 hover:bg-neutral-100 text-neutral-900 rounded-full flex gap-4 items-center shadow">
