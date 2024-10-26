@@ -46,6 +46,26 @@ In an industry often plagued by issues such as fraud, lack of traceability, and 
 ## Installation
 ```sh
 ### Blockchain section
+# 1. Option1 - Initialize a scaffold-eth2 project
+npx create-eth@latest
+cd project_name
+
+## 2. Option2 - Start right away from the scaffold-eth2 repo
+git clone https://github.com/scaffold-eth/scaffold-eth-2.git
+cd scaffold-eth-2
+yarn install
+
+## Initialize a local blockchain
+# In the first terminal
+yarn chain
+# In the second terminal - deploy contracts
+yarn deploy
+# In the third terminal - start app
+yarn start
+
+# Run tests
+cd packages/hardhat/test
+yarn hardhat:test
 
 ### Frontend section
 
