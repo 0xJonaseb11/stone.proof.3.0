@@ -1,16 +1,17 @@
+/* eslint-disable prettier/prettier */
 "use client";
-
+import { useState } from "react";
 import { Address } from "viem";
 import { useAccount, useDisconnect } from "wagmi";
 import { Balance } from "~~/components/scaffold-eth";
 import { AddressQRCodeModal } from "~~/components/scaffold-eth/RainbowKitCustomConnectButton/AddressQRCodeModal";
-// import { AddressInput } from "~~/components/scaffold-eth";
+import { AddressInput } from "~~/components/scaffold-eth";
 // import { Address } from "~~/components/scaffold-eth";
 
 export const AccountPageClient: React.FC = () => {
   const { address: connectedAddress } = useAccount();
   const { disconnect } = useDisconnect();
-  // onst [address, setAddress] = useState("");
+  const [address, setAddress] = useState("");
 
   return (
     <div>

@@ -7,13 +7,13 @@ const roles = [
   { label: "Miner", role: "MINER" },
   { label: "Transporter", role: "TRANSPORTER" },
   { label: "Auditor", role: "AUDITOR" },
-  { label: "Inspector", role: "Inspector" },
+  { label: "Inspector", role: "INSPECTOR" },
 ];
 
 export const ClaimRoleCard: React.FC = () => {
   return (
     <div className="flex flex-col max-w-72 gap-4 bg-neutral-100 px-6 py-4 rounded-xl shadow">
-      <p className="text-2xl text-center text-neutral-800">Congluations!</p>
+      <p className="text-2xl text-center text-neutral-800">Congratulations!</p>
       <p className="text-center text-neutral-500">
         Claim a role that will be used to identify you in Stoneproof platform.
       </p>
@@ -23,7 +23,9 @@ export const ClaimRoleCard: React.FC = () => {
         </SelectTrigger>
         <SelectContent className="bg-white">
           {roles.map(role => (
-            <SelectItem value={role.role}>{role.label}</SelectItem>
+            <SelectItem key={role.role} value={role.role}>
+              {role.label}
+            </SelectItem>
           ))}
         </SelectContent>
       </Select>
