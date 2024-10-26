@@ -1,7 +1,7 @@
 export default function LoadingUI() {
-  return (
-    <div>
-      <p>Loading....</p>
-    </div>
-  );
+    return (
+        <div>
+            <p>Loading....</p>
+        </div>
+    )
 }

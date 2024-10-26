@@ -1,7 +1,7 @@
-"use client";
+"use client"
 
 export const Providers: React.FC<{ children: React.ReactNode }> = ({
-  children,
+    children,
 }) => {
-  return <>{children}</>;
-};
+    return <>{children}</>
+}

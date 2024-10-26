@@ -1,1 +1,1 @@
-export * from "./marketing-layout";
+export * from "./marketing-layout"

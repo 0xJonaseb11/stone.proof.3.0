@@ -1,25 +1,25 @@
-import { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Metadata } from "next"
+import { Inter } from "next/font/google"
 
-import "./globals.css";
-import { Providers } from "./providers";
+import "./globals.css"
+import { Providers } from "./providers"
 
 export const metadata: Metadata = {
-  title: "Stoneproof",
-};
+    title: "Stoneproof",
+}
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"] })
 
 export default function RootLayout({
-  children,
+    children,
 }: {
-  children: React.ReactNode;
+    children: React.ReactNode
 }) {
-  return (
-    <html lang="en">
-      <body className={`${inter.className} antialiased`}>
-        <Providers>{children}</Providers>
-      </body>
-    </html>
-  );
+    return (
+        <html lang="en">
+            <body className={`${inter.className} antialiased`}>
+                <Providers>{children}</Providers>
+            </body>
+        </html>
+    )
 }

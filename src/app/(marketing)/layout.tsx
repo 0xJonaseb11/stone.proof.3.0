@@ -1,13 +1,13 @@
-import { MarketingLayout } from "@/components/layout";
+import { MarketingLayout } from "@/components/layout"
 
 export default function MarketingRootLayout({
-  children,
+    children,
 }: {
-  children: React.ReactNode;
+    children: React.ReactNode
 }) {
-  return (
-    <MarketingLayout>
-      <main>{children}</main>
-    </MarketingLayout>
-  );
+    return (
+        <MarketingLayout>
+            <main>{children}</main>
+        </MarketingLayout>
+    )
 }
