@@ -4,7 +4,7 @@ import { DiscordIcon, GithubIcon, XIcon } from "./svgs";
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="grid grid-cols-2 gap-4 justify-items-stretch p-8 mx-auto max-w-5xl bg-neutral-100 mb-4 rounded-xl shadow">
+    <footer className="grid sm:grid-cols-2 grid-cols-1 gap-4 justify-items-stretch p-8 sm:mx-auto max-w-5xl bg-neutral-100 mb-4 rounded-xl shadow mx-3">
       <div className="flex flex-col justify-start gap-4">
         <Image
           src={`/logo_dark.svg`}
@@ -26,7 +26,7 @@ export const Footer: React.FC = () => {
           <GithubIcon className="h-6 w-6" />
         </div>
       </div>
-      <div className="flex flex-col items-end space-y-2">
+      <div className="flex flex-col sm:items-end space-y-2">
         <h3 className="text-xl text-neutral-800">
           Stay up to date with Stone.proof
         </h3>
@@ -34,7 +34,7 @@ export const Footer: React.FC = () => {
           Subscribe to the newsletter for updates
         </p>
         <div>
-          <Input />
+          <Input placeholder="Email address" name="email" />
         </div>
       </div>
     </footer>
