@@ -43,7 +43,7 @@ export const Header: React.FC = () => {
           Connect a wallet
           <ArrowRight className="group-hover:translate-x-2 transition-all h-5" />
         </button> */}
-        <RainbowKitCustomConnectButton />
+        <RainbowKitCustomConnectButton className="group hidden bg-white px-6 py-2 hover:bg-neutral-100 text-neutral-900 rounded-full sm:flex gap-4 items-center shadow" />
         <Menu className="sm:hidden block h-6" onClick={toggleMenu} />
         <MobileMenu isOpen={isMenuOpen} onClose={toggleMenu} />
       </div>

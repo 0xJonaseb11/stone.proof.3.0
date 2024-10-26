@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { RainbowKitCustomConnectButton } from "../scaffold-eth";
 import { ArrowRight, Lock } from "lucide-react";
 
 export const HeroSection: React.FC = () => {
@@ -22,10 +23,7 @@ export const HeroSection: React.FC = () => {
         </p>
       </div>
       <div>
-        <button className="group bg-sky-600 hover:bg-sky-500 px-6 py-3 text-white rounded-full flex gap-4 items-center">
-          Connect a wallet
-          <ArrowRight className="group-hover:translate-x-2 transition-all" />
-        </button>
+        <RainbowKitCustomConnectButton className="group bg-sky-600 hover:bg-sky-500 px-6 py-3 text-white rounded-full flex gap-4 items-center" />
       </div>
       <div className="sm:flex hidden items-center justify-between text-center h-52 w-full backdrop-blur-md bg-white/40 border border-white max-w-4xl p-8 rounded-xl shadow-lg">
         <div>
