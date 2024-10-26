@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Address } from "viem";
 import { useAccount, useDisconnect } from "wagmi";
 import { Balance } from "~~/components/scaffold-eth";
@@ -9,19 +9,40 @@ import { AddressInput } from "~~/components/scaffold-eth";
 import { AddressInfoDropdown } from "~~/components/scaffold-eth/RainbowKitCustomConnectButton/AddressInfoDropdown";
 import { AddressQRCodeModal } from "~~/components/scaffold-eth/RainbowKitCustomConnectButton/AddressQRCodeModal";
 
-/* eslint-disable prettier/prettier */
-
-// import { Address } from "~~/components/scaffold-eth";
+// Helper function to validate Ethereum addresses
+const isValidAddress = (addr: string): boolean => {
+  return /^(0x)?[0-9a-fA-F]{40}$/.test(addr);
+};
 
 export const AccountPageClient: React.FC = () => {
   const { address: connectedAddress } = useAccount();
   const { disconnect } = useDisconnect();
-  const [address, setAddress] = useState("");
+  const [address, setAddress] = useState<string>("");
+
+  // Effect to handle connected address initialization
+  useEffect(() => {
+    if (connectedAddress && isValidAddress(connectedAddress)) {
+      setAddress(connectedAddress);
+    }
+  }, [connectedAddress]);
+
+  const handleAddressChange = (newAddress: string) => {
+    if (isValidAddress(newAddress)) {
+      setAddress(newAddress);
+    } else {
+      // Optionally handle invalid address case
+      console.error("Invalid address");
+    }
+  };
 
   return (
     <div>
-      <AddressInput onChange={setAddress} value={address} placeholder="Input your address" />
-      <AddressQRCodeModal address={connectedAddress as Address} modalId="qr-code modal" />
+      <AddressInput 
+        onChange={handleAddressChange} 
+        value={address} 
+        placeholder="Input your address" 
+      />
+      <AddressQRCodeModal address={connectedAddress as Address} modalId="qr-code-modal" />
       <div className="flex justify-center flex-col items-center">
         <p className="font-medium text-lg">Account Balance</p>
         <Balance address={connectedAddress as Address} />
@@ -32,7 +53,11 @@ export const AccountPageClient: React.FC = () => {
           Disconnect
         </button>
       </div>
-      <AddressInfoDropdown blockExplorerAddressLink="" displayName="" address={connectedAddress as Address} />
+      <AddressInfoDropdown 
+        blockExplorerAddressLink="" // Provide a valid link if available
+        displayName="" // Provide a valid display name if available
+        address={connectedAddress as Address} 
+      />
     </div>
   );
 };
