@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "account": "hardhat run scripts/listAccount.ts",
-    "chain": "hardhat node --network hardhat --no-deploy",
+    "chain": "hardhat node --network hardhat ",
     "compile": "hardhat compile",
     "deploy": "hardhat deploy",
     "flatten": "hardhat flatten",

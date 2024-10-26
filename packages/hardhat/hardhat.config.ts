@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 // hardhat.config.cjs
-require("@nomicfoundation/hardhat-toolbox");
+// require("@nomicfoundation/hardhat-toolbox");
 require("dotenv").config();
 
 const { PRIVATE_KEY, INFURA_PROJECT_ID } = process.env;
