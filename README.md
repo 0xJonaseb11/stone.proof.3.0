@@ -42,6 +42,7 @@ In an industry often plagued by issues such as fraud, lack of traceability, and 
 ```sh
 ### Blockchain section
 
+
 ### Frontend section
 
 
