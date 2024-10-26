@@ -2,11 +2,11 @@
 pragma solidity ^0.8.20;
 
 /**
-* ContractName DataRegistry
+* @title DataRegistry
 * @author: @0xJonaseb11
 * @notice: Stores the log of all txns and supply chain events
-* @param Provides a way to aufit and verify the integrity of the supply chain!
-* @param Could utilize merkle trees or similar methods for efficient amd verifiable data storage
+* @dev Provides a way to aufit and verify the integrity of the supply chain!
+* @dev Could utilize merkle trees or similar methods for efficient amd verifiable data storage
 */
 
 // imports

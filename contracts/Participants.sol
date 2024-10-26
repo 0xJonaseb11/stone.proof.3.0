@@ -5,8 +5,8 @@ pragma solidity ^0.8.20;
 * contractName Participants
 * @author: 0xJonaseb11
 * @notice Defines various paarticipants (miers, refiners, shippers, buyers, etc 
-* @param Each participants will have roles and permissions to perform specific actions!
-* @param Uses AccessControl for role management
+* @dev Each participants will have roles and permissions to perform specific actions!
+* @notice Uses AccessControl for role management
 */
 
 // imports
