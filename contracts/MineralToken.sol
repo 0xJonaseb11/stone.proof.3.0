@@ -2,26 +2,28 @@
 pragma solidity ^0.8.20;
 
 /**
-* contract MineraToken 
+* @title MineraToken 
 * @author: @0xJonaseb11
 * @notice A utility token(NFT) for digital certification of minerals
-* @param Could represent a batch of minerals, each token tracking a certain quantity or type of mineral
-* @param Integrates with the Supplychain.sol for transferring mineral ownership
+* @dev Could represent a batch of minerals, each token tracking a certain quantity or type of mineral
+* @dev Integrates with the Supplychain.sol for transferring mineral ownership
 */
 
 // imports
 import { ERC721 } from "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import { AccessControl } from "@openzeppelin/contracts/access/AccessControl.sol";
-import "@openzeppelin/contracts/utils/Counters.sol";
+import { Counters } from "@openzeppelin/contracts/utils/Counters.sol";
 
 
 
 contract MineralToken  is ERC721, AccessControl {
     // states 
-    // mapping to store batch details
+    // mappings to track token existence
+    mapping(uint256 => bool) private tokenExists;
+    // mappings to store batch details
     mapping(uint256 => MineralBatch) public mineralBatches;
     mapping(uint256 => bool) public verifiedBatches;
-    using Counters for counters.Counter;
+    using Counters for Counters.Counter;
 
     Counters.Counter private _tokenIds;
     bytes32 public constant MINTER_ROLE =  keccak256("MINTER_ROLE");
@@ -43,7 +45,8 @@ contract MineralToken  is ERC721, AccessControl {
 
     // contract constructor
     constructor() ERC721("MineralToken", "MTK") {
-        _setupRole(DEFAULT_ADMIN_ROLE, msg.sender);
+       _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
+       _grantRole(MINTER_ROLE, msg.sender);
     }
 
 
@@ -60,6 +63,8 @@ contract MineralToken  is ERC721, AccessControl {
 
         // mint the new token representing the mineral batch
         _mint(msg.sender, newBatchId);
+        // mark the token as existing
+        tokenExists[newBatchId] = true;
 
         // store batch details
         mineralBatches[newBatchId] = MineralBatch({
@@ -78,8 +83,8 @@ contract MineralToken  is ERC721, AccessControl {
     }
 
     // verification of mineral batch
-    function verifyBatch(uint256 _tokenId) public onlyRole(DEFUALT_ADMIN_ROLE) {
-        require(_exists(_tokenId), "Batch Doesn't exist");
+    function verifyBatch(uint256 _tokenId) public onlyRole(DEFAULT_ADMIN_ROLE) {
+        require(_requireOwned(_tokenId), "Batch Doesn't exist");
 
         MineralBatch storage batch = mineralBatches[_tokenId];
         batch.isCertified = true;
@@ -94,15 +99,29 @@ contract MineralToken  is ERC721, AccessControl {
     // getters - executes
     // retrieve batch details
     function getBatchDetails(uint256 _tokenId) public view returns(MineralBatch memory) {
-        require(_exists(_tokenId), "Batch Doesn't Exist!!");
+        require(_requireOwned(_tokenId), "Batch Doesn't Exist!!");
         return mineralBatches[_tokenId];
     }
 
     // transfer mineral
     function transferMineral(address to, uint256 _tokenId) public onlyRole(TRANSFER_ROLE) {
-        require(_exists(_tokenId), "Batch Doesn't Exist!!");
+        require(_requireOwned(_tokenId), "Batch Doesn't Exist!!");
         require(verifiedBatches[_tokenId], "Batch Isn't Verified!!"); // only allow transfer of verified mineral batches
 
         _transfer(msg.sender, to, _tokenId);
+    }
+
+    /**
+    * @dev Custom `_exists` function to check if a token exists 
+    */
+    function _exists(uint256 tokenId) internal view returns(bool) {
+        return tokenExists[tokenId];
+    }
+
+    /**
+    * @dev supportsInterface function to resolve overriding issue
+    */
+    function supportsInterface(bytes4 interfaceId) public view virtual override(ERC721, AccessControl) returns(bool) {
+        return super.supportsInterface(interfaceId);
     }
 }

@@ -38,7 +38,7 @@ contract DataRegistry is AccessControl{
     // contract constructor
     constructor() {
         // set up roles
-        _setupRole(DEFAULT_ADMIN_ROLE, msg.sender);
+        _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
     }
 
     // errors - customly

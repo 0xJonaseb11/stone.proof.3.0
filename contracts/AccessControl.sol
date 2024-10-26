@@ -2,9 +2,10 @@
 pragma solidity ^0.8.20;
 
 /**
-* @contract Mineral 
+* @title AccessControl 
+* @author: @0xJonaseb11
 * @notice Manages roles for paricipants(eg:, miner, Refiner, Athour)
-* @param Provides function modifier to restrict access to specific roles
+* @dev Provides function modifier to restrict access to specific roles
 * Author can verify a mineral TRES
 */
 contract AccessControl {

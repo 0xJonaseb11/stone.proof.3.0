@@ -12,7 +12,7 @@ pragma solidity ^0.8.20;
 // imports
 import { AccessControl } from "@openzeppelin/contracts/access/AccessControl.sol";
 
-contract Partcipants {
+contract Partcipants is AccessControl{
     // states
     mapping(address => Participant) public participants;
     address[] public participantList;
@@ -41,7 +41,7 @@ contract Partcipants {
 
     // contract constructor
     constructor () {
-        _setupRole(DEFAULT_ADMIN_ROLE, msg.sender);
+        _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
     }
 
 
@@ -77,8 +77,8 @@ contract Partcipants {
         participantList.push(_participantAddress);
 
         // setup role to recently added participant
-        _setupRole(roleHash, _participantAddress);
-        emit ParticipantRegistered(_participantAddressm, _role, _name);
+        _grantRole(roleHash, _participantAddress);
+        emit ParticipantRegistered(_participantAddress, _role, _name);
     }
 
     // Update participant status
@@ -101,7 +101,7 @@ contract Partcipants {
 
         // assign new role
         bytes32 newRoleHash = keccak256(abi.encodePacked(_newRole));
-        _setupRole(newRoleHash, _participantAddress);
+        _grantRole(newRoleHash, _participantAddress);
         participants[_participantAddress].role = _newRole;
         
         // log event to blockchain after updating role

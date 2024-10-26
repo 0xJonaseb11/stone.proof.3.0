@@ -2,12 +2,12 @@
 pragma solidity ^0.8.20;
 
 /**
-* SupplyChain contract
+* @title SupplyChain 
 * @author @0xJonaseb11 
 * @notice Manages the flow of minerals in the supply chain
 * @notice Remember to do some auditing to resolve any vulnerability to external calls with nonReentrant
-* @param Tracks status(mined, processed, transported, etc) using events
-* @param Links to Participants.sol for updating and verifying actions performed by different chain actors!
+* @dev Tracks status(mined, processed, transported, etc) using events
+* @dev Links to Participants.sol for updating and verifying actions performed by different chain actors!
 **/
 
 // imports
@@ -44,7 +44,7 @@ contract SupplyChain is AccessControl {
     // contract constructor
     constructor() {
         // grant the contract deployer the admin role
-        _setUpRole(DEFAULT_ADMIN_ROLE, msg.sender);
+        _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
     }
 
     // errors - custormly
