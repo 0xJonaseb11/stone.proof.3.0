@@ -10,7 +10,7 @@ export const HeroSection: React.FC = () => {
       >
         <Lock className="h-4 w-4" />
         <p className="text-sm">
-          Revolutionizing mineral supply chain management with the Incredibility of Ethereum Ecosystem!
+          Revolutioning mineral supply chain with using the Etherium!
         </p>
         <ArrowRight className="h-4 group-hover:translate-x-1 transition-all" />
       </Link>

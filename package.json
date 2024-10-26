@@ -35,16 +35,10 @@
     "verify": "yarn workspace @se-2/hardhat verify"
   },
   "devDependencies": {
-    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
-    "@types/chai": "^5",
-    "@types/react": "18.3.12",
-    "autoprefixer": "^10.4.20",
     "hardhat": "^2.22.15",
+    "hardhat-deploy": "^0.14.0",
     "husky": "~8.0.3",
-    "lint-staged": "~13.2.2",
-    "mini-css-extract-plugin": "^2.9.1",
-    "postcss": "^8.4.47",
-    "tailwindcss": "^3.4.14"
+    "lint-staged": "~13.2.2"
   },
   "packageManager": "yarn@3.2.3",
   "engines": {
@@ -54,6 +48,8 @@
     "@nomicfoundation/hardhat-chai-matchers": "^2.0.8",
     "@nomicfoundation/hardhat-ethers": "^3.0.8",
     "@nomicfoundation/hardhat-ignition-ethers": "^0.15.0",
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@nomiclabs/hardhat-ethers": "^2.2.3",
     "@openzeppelin/contracts": "^5.1.0",
     "@radix-ui/react-accordion": "^1.2.1",
     "@radix-ui/react-navigation-menu": "^1.2.1",
@@ -61,7 +57,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "dotenv": "^16.4.5",
-    "ethers": "^5.7.2",
+    "ethers": "5.7.2",
     "framer-motion": "^11.11.10",
     "l": "^0.6.0",
     "lucide-react": "^0.453.0",

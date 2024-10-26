@@ -1,8 +1,8 @@
 "use strict";
-const hre = require("ethers");
+const hre = require("hardhat");
 
 const main = async() => {
-    const MineralToken = await ethers.getContractFactory("MineralToken");
+    const MineralToken = await hre.ethers.getContractFactory("MineralToken");
     const mineralToken = await MineralToken.deploy();
 
     await mineralToken.deployed();
@@ -15,7 +15,7 @@ const runMain = async() => {
         await main();
         process.exit(0);
     } catch(err) {
-        console.log("Error while deploying MineralToken contract", err);
+        console.error("Error while deploying MineralToken contract", err);
         process.exit(1)
     } finally {
         console.log("Application execution stopped")

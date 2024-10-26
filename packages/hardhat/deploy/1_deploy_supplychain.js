@@ -1,9 +1,9 @@
 "use strict";
-const hre = require("ethers");
+const hre = require("hardhat");
 
 const main = async() => {
-    const Supplychain = await ethers.getContractFactory("SupplyChain");
-    const supplychain = await Supplychain.deploy();
+    const SupplyChain = await hre.ethers.getContractFactory("SupplyChain");
+    const supplychain = await SupplyChain.deploy();
 
     await supplychain.deployed();
 
@@ -15,7 +15,7 @@ const runMain = async() => {
         await main();
         process.exit(0);
     } catch(err) {
-        console.log("Error while deploying SupplyChain contract", err);
+        console.error("Error while deploying SupplyChain contract", err);
         process.exit(1)
     } finally {
         console.log("Application execution stopped")

@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "account": "hardhat run scripts/listAccount.ts",
-    "chain": "hardhat node --network hardhat --no-deploy",
+    "chain": "hardhat node --network hardhat",
     "compile": "hardhat compile",
     "deploy": "hardhat deploy",
     "flatten": "hardhat flatten",
@@ -19,7 +19,7 @@
   "dependencies": {
     "@openzeppelin/contracts": "~5.0.2",
     "@typechain/ethers-v6": "~0.5.1",
-    "dotenv": "~16.0.3",
+    "dotenv": "^16.4.5",
     "envfile": "~6.18.0",
     "qrcode": "~1.5.1"
   },
@@ -42,8 +42,8 @@
     "eslint": "~8.26.0",
     "eslint-config-prettier": "~8.5.0",
     "eslint-plugin-prettier": "~4.2.1",
-    "ethers": "~6.13.2",
-    "hardhat": "~2.22.10",
+    "ethers": "5.7.2",
+    "hardhat": "^2.22.15",
     "hardhat-deploy": "~0.12.4",
     "hardhat-deploy-ethers": "~0.4.2",
     "hardhat-gas-reporter": "~2.2.1",
