@@ -6,8 +6,10 @@ export const metadata: Metadata = {
 
 export default function DashboardPage() {
   return (
-    <div>
-      <p>Hello world</p>
+    <div className="">
+      <div>
+        <p>Hello world</p>
+      </div>
     </div>
   );
 }
