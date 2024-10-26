@@ -36,34 +36,10 @@
   },
   "devDependencies": {
     "husky": "~8.0.3",
-    "lint-staged": "~13.2.2",
-    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
-    "@types/react": "18.3.12",
-    "autoprefixer": "^10.4.20",
-    "hardhat": "^2.22.15",
-    "mini-css-extract-plugin": "^2.9.1",
-    "postcss": "^8.4.47",
-    "tailwindcss": "^3.4.14"
+    "lint-staged": "~13.2.2"
   },
   "packageManager": "yarn@3.2.3",
   "engines": {
     "node": ">=18.18.0"
-  },
-  "dependencies": {
-    "dotenv": "^16.4.5",
-    "@openzeppelin/contracts": "^5.1.0",
-    "@radix-ui/react-accordion": "^1.2.1",
-    "@radix-ui/react-navigation-menu": "^1.2.1",
-    "class-variance-authority": "^0.7.0",
-    "clsx": "^2.1.1",
-    "ethers": "^5.7.2",
-    "framer-motion": "^11.11.10",
-    "l": "^0.6.0",
-    "lucide-react": "^0.453.0",
-    "next": "^15.0.1",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-intersection-observer": "^9.13.1",
-    "tailwind-merge": "^2.5.4"
   }
 }
