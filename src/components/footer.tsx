@@ -1,12 +1,11 @@
 import Image from "next/image";
-import { XBrandIcon } from "./x-icon";
-import { Github } from "lucide-react";
 import { Input } from "./ui/input";
+import { DiscordIcon, GithubIcon, XIcon } from "./svgs";
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="grid grid-cols-2 gap-4 justify-items-stretch p-8 mx-auto max-w-5xl bg-neutral-100 mb-4 rounded-xl">
-      <div className="space-y-3">
+    <footer className="grid grid-cols-2 gap-4 justify-items-stretch p-8 mx-auto max-w-5xl bg-neutral-100 mb-4 rounded-xl shadow">
+      <div className="flex flex-col justify-start gap-4">
         <Image
           src={`/logo_dark.svg`}
           alt="Stoneproof"
@@ -21,8 +20,10 @@ export const Footer: React.FC = () => {
           permissionless public blockchains.
         </p>
 
-        <div>
-          <XBrandIcon className="h-4 hover:text-black" />
+        <div className="flex justify-start gap-3 mt-10">
+          <XIcon className="h-6 w-6" />
+          <DiscordIcon className="h-6 w-6" />
+          <GithubIcon className="h-6 w-6" />
         </div>
       </div>
       <div className="flex flex-col items-end space-y-2">
