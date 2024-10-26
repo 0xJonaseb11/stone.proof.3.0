@@ -1,5 +1,6 @@
 # stone.proof
-![](./assets/STONE.PROOF.webp)
+![stone.proof-readmeImage](./assets/stone.proot-refined.webp)
+<img src="./assets/stone.proot-refined.webp" height="10px" width="10px">
 [License](./LICENSE)
 
 ## About
