@@ -6,6 +6,7 @@ import { AddressInfoDropdown } from "./AddressInfoDropdown";
 import { AddressQRCodeModal } from "./AddressQRCodeModal";
 import { WrongNetworkDropdown } from "./WrongNetworkDropdown";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
+import { ArrowRight } from "lucide-react";
 import { Address } from "viem";
 import { useNetworkColor } from "~~/hooks/scaffold-eth";
 import { useTargetNetwork } from "~~/hooks/scaffold-eth/useTargetNetwork";
@@ -31,8 +32,13 @@ export const RainbowKitCustomConnectButton = () => {
             {(() => {
               if (!connected) {
                 return (
-                  <button className="btn btn-primary btn-sm" onClick={openConnectModal} type="button">
+                  <button
+                    className="group hidden bg-white px-6 py-2 hover:bg-neutral-100 text-neutral-900 rounded-full sm:flex gap-4 items-center shadow"
+                    onClick={openConnectModal}
+                    type="button"
+                  >
                     Connect Wallet
+                    <ArrowRight className="group-hover:translate-x-2 transition-all h-5" />
                   </button>
                 );
               }

@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import MobileMenu from "./mobile-menu";
-import { ArrowRight, Menu } from "lucide-react";
+import { RainbowKitCustomConnectButton } from "./scaffold-eth";
+import { Menu } from "lucide-react";
 import { useInView } from "react-intersection-observer";
 
 export const Header: React.FC = () => {
@@ -38,10 +39,11 @@ export const Header: React.FC = () => {
         <Link href={`/#about`}>About</Link>
       </div>
       <div>
-        <button className="group hidden bg-white px-6 py-2 hover:bg-neutral-100 text-neutral-900 rounded-full sm:flex gap-4 items-center shadow">
+        {/* <button className="group hidden bg-white px-6 py-2 hover:bg-neutral-100 text-neutral-900 rounded-full sm:flex gap-4 items-center shadow">
           Connect a wallet
           <ArrowRight className="group-hover:translate-x-2 transition-all h-5" />
-        </button>
+        </button> */}
+        <RainbowKitCustomConnectButton />
         <Menu className="sm:hidden block h-6" onClick={toggleMenu} />
         <MobileMenu isOpen={isMenuOpen} onClose={toggleMenu} />
       </div>
