@@ -69,13 +69,15 @@ This is an open source project that can be changed in the future if found necess
 I want to express my sincere gratitude to the following individuals and resourceful companies for making this project possible:
 
 
-**Irere Emmanuel(@Irere123)** :: For his assistanve in developing the best ever to exist User Interface for seamless interaction with smartcontracts.
+**Irere Emmanuel(@Irere123)** :: For his assistance in developing the best modern ever-to-exist User Interface for seamless interaction with smartcontracts.
 <br>
-**Openzeppelin** :: For their robust libraries and tools that streamlined the smart contract development process.
+**[Openzeppelin](https://www.openzeppelin.com/)** :: For their robust libraries and tools that streamlined the smart contract development process.
 <br>
-**Scaffold-ETH**:: For providing a solid foundation for building Ethereum applications quickly.
+**[Scaffold-ETH2](https://scaffold-eth-2-docs.vercel.app/quick-start)**:: For providing a solid foundation for building Ethereum applications quickly.
 <br>
-**Ethereum Documentation**:: For serving as a comprehensive resource for understanding Ethereum development.
+**[Ethereum Organisation](https://ethereum.org/en/developers/docs/)**:: For serving as a comprehensive resource for understanding Ethereum development.
+
+_**Thank you all for your support and contributions!**_
 
 
 
