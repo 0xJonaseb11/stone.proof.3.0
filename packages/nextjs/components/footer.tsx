@@ -1,6 +1,8 @@
+/* eslint-disable prettier/prettier */
 import Image from "next/image";
 import { DiscordIcon, GithubIcon, XIcon } from "./svgs";
 import { Input } from "./ui/input";
+// import Link from "next/link";
 
 export const Footer: React.FC = () => {
   return (
@@ -10,12 +12,12 @@ export const Footer: React.FC = () => {
         <p className="text-xs">
           stone.proof.com provides information and resources about the fundamentals of the decentralised non-custodial
           liquidity protocol called the Stoneproof Protocol, comprised of open-source self-executing smart contracts
-          that are deployed on various permissionless public blockchains.
+          that are deployed on various permissionless public blockchains. It emphasizes on promoting a protocol-based network that facilitates in in managing mineral supply chain with a tamper-proof environment to achieve integrity and trust between companies , miners, professionals, government and finally consumers of the minerals.
         </p>
 
         <div className="flex justify-start gap-3 mt-10">
           <XIcon className="h-6 w-6" />
-          <DiscordIcon className="h-6 w-6" />
+          <DiscordIcon className="h-6 w-6"/>
           <GithubIcon className="h-6 w-6" />
         </div>
       </div>

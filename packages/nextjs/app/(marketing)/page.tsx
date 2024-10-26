@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import Image from "next/image";
 import { AnimatedCircles, HealthSvg, LayeredCircles, SwapSvgIcon } from "~~/components/svgs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "~~/components/ui/accordion";
@@ -24,7 +25,7 @@ export default function Page() {
             <div className="flex flex-col gap-6">
               <h2 className="text-3xl font-medium text-neutral-800 mt-4">Extensive Audits</h2>
               <p className="text-neutral-600">
-                Peace of mind supported by multiple audits by the world&lsquo;s leading security firms.
+                All the mining activities are controlled by Intergrity professionals that provide pure quality of information and limit tampering of data and prevents counterfeiting and fraud from bad actors
               </p>
             </div>
           </div>
@@ -54,11 +55,11 @@ export default function Page() {
           <div className="flex flex-col gap-3 justify-end p-8 rounded-xl relative shadow">
             <SwapSvgIcon />
             <p className="text-xl font-medium text-neutral-800">Swap</p>
-            <p className="text-neutral-600">Swap any ERC-20, even those borrowed or supplied.</p>
+            <p className="text-neutral-600">Swap any ERC-20, even those borrowed or supplied - This facilitates resource and authority transfering in the organisation based on the role!</p>
           </div>
           <div className="flex flex-col gap-3 justify-end p-8 rounded-xl relative shadow">
             <AnimatedCircles />
-            <p className="text-xl font-medium text-neutral-800">Stake</p>
+            <p className="text-xl font-medium text-neutral-800">ing</p>
             <p className="text-neutral-600">Earn rewards for securing the protocol</p>
           </div>
           <div className="flex flex-col gap-3 justify-end p-8 rounded-xl relative shadow">
@@ -72,6 +73,7 @@ export default function Page() {
             </div>
             <p className="text-xl font-medium text-neutral-800">Multi-Network</p>
             <p className="text-neutral-600">Deployable on any EVM compatible network.</p>
+            <p>Our platform provides ways to facilitate the deployment and roles on multiple networks that help miners and other parties involved in the protocol.</p>
           </div>
         </div>
       </section>
@@ -84,24 +86,25 @@ export default function Page() {
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1">
               <AccordionTrigger>What is Stoneproof?</AccordionTrigger>
-              <AccordionContent>Yes. It adheres to the WAI-ARIA design pattern.</AccordionContent>
+              {/* eslint-disable-next-line prettier/prettier*/}
+              <AccordionContent>Stone proof is a supply chain management application that helps to achieve integrity between mining companies and consumers in providing pure quality minerals that contain neither fraud nor counterfeit</AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">
               <AccordionTrigger>Where are supplied tokens stored?</AccordionTrigger>
               <AccordionContent>
-                Yes. It comes with default styles that matches the other components&apos; aesthetic.
+               <p> The supplied tokens are stored on the blockchain legder where they are kept safely and not tempered with by anyone&apos; they are immutable to approve ownership </p>
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-3">
               <AccordionTrigger>Does Stoneproof have risks?</AccordionTrigger>
               <AccordionContent>
-                Yes. It&apos;s animated by default, but you can disable it if you prefer.
+               stone.proof concedes known risks since it ensures productiviy and favors users when it comes to storing mining data.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-3">
               <AccordionTrigger>Why should I trust Stoneproof?</AccordionTrigger>
               <AccordionContent>
-                Yes. It&apos;s animated by default, but you can disable it if you prefer.
+              stone.proof being built on The most efficient and trustable blockchain;Etherem - therefore, stone.proof provides pure layer of security hence integrity between parties
               </AccordionContent>
             </AccordionItem>
           </Accordion>

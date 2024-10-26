@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 "use client";
 
 import Link from "next/link";
@@ -15,7 +16,7 @@ export const HeroSection: React.FC = () => {
         className="group sm:flex hidden justify-between gap-2 items-center cursor-pointer bg-white/70 max-w-[500px] px-3 py-2 rounded-full transition-all hover:shadow-md text-neutral-700"
       >
         <Lock className="h-4 w-4" />
-        <p className="text-sm text-ellipsis text-center">Revolutioning mineral supply chain with using the Etherium!</p>
+        <p className="text-sm text-ellipsis text-center">Revolutionizing mineral supply chain management with Ethereum Blockchain!</p>
         <ArrowRight className="h-4 group-hover:translate-x-1 transition-all" />
       </Link>
       <div className="max-w-3xl text-center space-y-10 mt-12 mb-4">
