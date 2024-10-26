@@ -53,6 +53,7 @@ export const RainbowKitCustomConnectButton: React.FC<{ className?: string }> = (
                       {chain.name}
                     </span>
                   </div>
+
                   {/* <AddressInfoDropdown
                     address={account.address as Address}
                     displayName={account.displayName}
