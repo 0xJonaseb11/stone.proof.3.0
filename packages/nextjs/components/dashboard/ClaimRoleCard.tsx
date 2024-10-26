@@ -10,7 +10,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../ui/select";
-import ParticipantsABI from "../../contracts/Participants.json"; // Adjust the path as needed
+import ParticipantsABI from "../../contracts/Participants.json"; 
 
 type Role = {
   label: string;

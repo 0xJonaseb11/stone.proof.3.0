@@ -3,17 +3,15 @@
 import React, { ChangeEvent, useState } from "react";
 // Import ABI correctly
 import MineralTokenABI from "../../contracts/MineralToken.json";
-import { ethers, providers } from "ethers";
+import { Contract, ethers, providers } from "ethers";
 
-// Props interface for optional address override
 interface ClaimRoleCardProps {
   contractAddress?: string;
 }
 
-// Default contract address used if not provided via props
-const DEFAULT_CONTRACT_ADDRESS = "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9";
+const mineralTokenAddress = "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9";
 
-const ClaimRoleCard: React.FC<ClaimRoleCardProps> = ({ contractAddress = DEFAULT_CONTRACT_ADDRESS }) => {
+const ClaimRoleCard: React.FC<ClaimRoleCardProps> = ({ contractAddress = mineralTokenAddress }) => {
   // State hooks with proper types
   const [role, setRole] = useState<string>("");
   const [account, setAccount] = useState<string>("");
@@ -23,6 +21,7 @@ const ClaimRoleCard: React.FC<ClaimRoleCardProps> = ({ contractAddress = DEFAULT
   const getContract = (): Contract => {
     const provider = new providers.Web3Provider(window.ethereum as any);
     const signer = provider.getSigner();
+
     return new ethers.Contract(contractAddress, MineralTokenABI.abi, signer);
   };
 
