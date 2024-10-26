@@ -1,6 +1,6 @@
-# StoneProof
+# stone.proof
 ![](./assets/STONE.PROOF.webp)
-![License](./LICENSE)
+[License](./LICENSE)
 
 ## About
 <div>
@@ -25,14 +25,16 @@ StoneProof is an innovative blockchain-based application designed to enhance tra
 ## Features
 - Scaffold-eth2 tool
 - Oppenzeppelin secure contracts
-- hardhat tool
+- Hardhat tool
 - Modern wallet integration
-- enahnced testing
-- seamless interaction with dApp
+- Enahnced testing
+- Sleek User Interface
+- Seamless interaction with dApp
+
 
 ## Problem Statement
 <div>
-In an industry often plagued by issues such as fraud, lack of traceability, and opaque supply chains, StoneProof addresses these challenges by introducing a reliable, secure, and transparent method for managing mineral assets. By integrating blockchain technology, StoneProof revolutionizes how minerals are tracked and certified, empowering businesses to build trust with their clients and stakeholders.
+In an industry often plagued by issues such as fraud, lack of traceability, and opaque supply chains, <b>stone.proof</b> addresses these challenges by introducing a reliable, secure, and transparent method for managing mineral assets. By integrating blockchain technology, <b>stone.proof</b> revolutionizes how minerals are tracked and certified, empowering businesses to build trust with their clients and stakeholders.
 </div>
 
 
