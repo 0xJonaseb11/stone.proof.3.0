@@ -8,7 +8,7 @@ export default function DashboardPage() {
   return (
     <div className="">
       <div>
-        <p>Hello world</p>
+        <p>Welcome Partner, Claim your role here!!</p>
       </div>
     </div>
   );
