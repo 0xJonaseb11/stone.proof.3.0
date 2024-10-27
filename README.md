@@ -1,6 +1,6 @@
 # stone.proof
-<!-- ![stone.proof-readmeImage](./assets/stone.proot-refined.webp) -->
-<img src="./assets/stone.proot-refined.webp" height="600" width="600" alt="stone.proof-display-logo" />
+![stone.proof-readmeImage](./assets/stone.proot-refined.webp)
+<!-- <img src="./assets/stone.proot-refined.webp" height="600" width="600" alt="stone.proof-display-logo" /> -->
 <br>
 <br>
 
