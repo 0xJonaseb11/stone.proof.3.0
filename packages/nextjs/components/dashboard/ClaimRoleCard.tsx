@@ -1,6 +1,6 @@
-/* eslint-disable prettier/prettier */
 "use client";
 
+/* eslint-disable prettier/prettier */
 import { useState } from "react";
 import { ethers } from "ethers";
 import {
