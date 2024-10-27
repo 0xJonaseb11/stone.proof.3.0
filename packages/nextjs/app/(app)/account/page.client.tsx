@@ -1,11 +1,16 @@
 /* eslint-disable prettier/prettier */
 "use client";
+
 import { useState } from "react";
 import { Address } from "viem";
 import { useAccount, useDisconnect } from "wagmi";
 import { Balance } from "~~/components/scaffold-eth";
-import { AddressQRCodeModal } from "~~/components/scaffold-eth/RainbowKitCustomConnectButton/AddressQRCodeModal";
 import { AddressInput } from "~~/components/scaffold-eth";
+import { AddressInfoDropdown } from "~~/components/scaffold-eth/RainbowKitCustomConnectButton/AddressInfoDropdown";
+import { AddressQRCodeModal } from "~~/components/scaffold-eth/RainbowKitCustomConnectButton/AddressQRCodeModal";
+
+/* eslint-disable prettier/prettier */
+
 // import { Address } from "~~/components/scaffold-eth";
 
 export const AccountPageClient: React.FC = () => {
@@ -27,6 +32,7 @@ export const AccountPageClient: React.FC = () => {
           Disconnect
         </button>
       </div>
+      <AddressInfoDropdown blockExplorerAddressLink="" displayName="" address={connectedAddress as Address} />
     </div>
   );
 };

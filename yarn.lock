@@ -2985,6 +2985,7 @@ __metadata:
     eslint-config-next: ~14.0.4
     eslint-config-prettier: ~8.5.0
     eslint-plugin-prettier: ~4.2.1
+    ethers: 5.7.2
     framer-motion: ^11.11.10
     lucide-react: ^0.453.0
     next: ~14.2.11
