@@ -8,6 +8,7 @@ import {
   ExtractAbiEventNames,
   ExtractAbiFunction,
 } from "abitype";
+
 import type { ExtractAbiFunctionNames } from "abitype";
 import type { Simplify } from "type-fest";
 import type { MergeDeepRecord } from "type-fest/source/merge-deep";
@@ -21,6 +22,7 @@ import {
   TransactionReceipt,
   WriteContractErrorType,
 } from "viem";
+
 import { Config, UseReadContractParameters, UseWatchContractEventParameters } from "wagmi";
 import { WriteContractParameters, WriteContractReturnType } from "wagmi/actions";
 import { WriteContractVariables } from "wagmi/query";
