@@ -7,7 +7,9 @@
 [License](./LICENCE)
 
 <br>
+
 ## About
+
 <div>
 StoneProof is an innovative blockchain-based application designed to enhance transparency, traceability, and trust in the mineral supply chain. Built on the Ethereum blockchain using Scaffold-ETH 2, StoneProof leverages smart contract technology to provide a decentralized solution for digital certification of mineral assets.
 
