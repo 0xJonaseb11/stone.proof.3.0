@@ -4,6 +4,7 @@
 import { useState, useEffect } from "react";
 import { ethers } from "ethers";
 import DataRegistryABI from "../../contracts/DataRegistry.json";
+
 type DataRecord = {
   id: string;
   description: string;

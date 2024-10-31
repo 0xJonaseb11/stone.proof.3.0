@@ -6,6 +6,7 @@ export const metadata: Metadata = { title: "Account" };
 export default function AccountPage() {
   return (
     <div className="py-6 px-4">
+      <h1>welcome</h1>
       <AccountPageClient />
     </div>
   );

@@ -10,7 +10,10 @@ export const metadata: Metadata = {
 
 export default function DashboardPage() {
   return (
-    <div className="w-full min-h-full flex justify-center  bg-neutral-400 shadow-2xl">
+    <div className="w-full min-h-full flex justify-center bg-neutral-100 shadow-2xl">
+      <div className="flex justify-center w-full ">
+        <p>Welcome, Partner! Start by claiming a role!🤝</p>
+      </div>
       <ClaimRoleCard />
       <DataRegistry />
       <MineralToken />
@@ -18,4 +21,3 @@ export default function DashboardPage() {
     </div>
   );
 }
-
