@@ -18,11 +18,13 @@ export const DataRegistry: React.FC = () => {
   const fetchDataRecords = async () => {
     setIsLoading(true);
     try {
-      if (!window.ethereum) {
+      // Check if `window` is defined and `ethereum` is available to avoid server-side errors
+      if (typeof window !== "undefined" && !window.ethereum) {
         alert("Please install MetaMask or any other EVM-wallet");
         return;
       }
 
+      // If `window` is defined, proceed with accessing `window.ethereum`
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const signer = provider.getSigner();
       const contractAddress = "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0"; 
@@ -45,7 +47,10 @@ export const DataRegistry: React.FC = () => {
   };
 
   useEffect(() => {
-    fetchDataRecords();
+    // Ensure fetchDataRecords runs only on the client side
+    if (typeof window !== "undefined") {
+      fetchDataRecords();
+    }
   }, []);
 
   return (

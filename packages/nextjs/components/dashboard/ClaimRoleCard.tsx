@@ -70,8 +70,8 @@ export const ClaimRoleCard: React.FC = () => {
 
   return (
 
-    <div className="flex flex-col max-w-72 gap-4 bg-neutral-100 px-12 py-16 rounded-xl shadow mr-10">
-      <p>Welcome, Partner! Start by claiming a role!🤝</p>
+    <div className="flex flex-col max-w-72 gap-4 bg-neutral-100 px-12 py-8 rounded-xl shadow mr-10">
+      <p>Welcome, Partner! Start here by claiming a role!</p>
       <p className="text-2xl text-center text-neutral-800">Congratulations!</p>
       <p className="text-center text-neutral-500">
         Claim a role that will be used to identify you on the Stoneproof platform.
